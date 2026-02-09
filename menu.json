@@ -1,0 +1,627 @@
+{
+  "restaurant": {
+    "name": "Tibetan Taste",
+    "rating": 4.5,
+    "deliveryTime": "30 mins",
+    "timing": "11 AM - 11 PM",
+    "specialOffer": "Flat 10% OFF today!"
+  },
+  "theme": {
+    "color": "#FC8019",
+    "hero": ""
+  },
+  "settings": {
+    "deliveryFee": 20,
+    "taxPercent": 5,
+    "orderPrefix": "ORD-",
+    "darkMode": false,
+    "enableSound": true,
+    "minCartValue": 200
+  },
+  "categories": [
+    {
+      "name": "SOUPS",
+      "items": [
+        {
+          "name": "SWEET CORN SOUP",
+          "price": 199,
+          "desc": "Rich, aromatic, and absolutely satisfying.",
+          "img": "images/soups1.jpg"
+        },
+        {
+          "name": "HOT & SOUR SOUP",
+          "price": 144,
+          "desc": "Rich, aromatic, and absolutely satisfying.",
+          "img": "images/soups2.jpg"
+        },
+        {
+          "name": "MANCHOW SOUP",
+          "price": 195,
+          "desc": "Rich, aromatic, and absolutely satisfying.",
+          "img": "images/soups3.jpg"
+        },
+        {
+          "name": "CLEAR SOUP",
+          "price": 178,
+          "desc": "Freshly prepared and full of flavor.",
+          "img": "images/soups4.jpg"
+        }
+      ]
+    },
+    {
+      "name": "PIZZA",
+      "items": [
+        {
+          "name": "MARGHERITA PIZZA",
+          "desc": "Classic cheese tomato pizza.",
+          "img": "images/fried_rice1.jpg",
+          "variants": [
+            {
+              "label": "4 Piece",
+              "price": 149
+            },
+            {
+              "label": "6 Piece",
+              "price": 199
+            },
+            {
+              "label": "8 Piece",
+              "price": 249
+            }
+          ]
+        },
+        {
+          "name": "FARMHOUSE PIZZA",
+          "desc": "Loaded with veggies and cheese.",
+          "img": "images/noodles1.jpg",
+          "variants": [
+            {
+              "label": "4 Piece",
+              "price": 169
+            },
+            {
+              "label": "6 Piece",
+              "price": 229
+            },
+            {
+              "label": "8 Piece",
+              "price": 289
+            }
+          ]
+        },
+        {
+          "name": "CHICKEN TANDOORI PIZZA",
+          "desc": "Smoky chicken with cheese.",
+          "img": "images/non_veg_munchurian1.jpg",
+          "variants": [
+            {
+              "label": "4 Piece",
+              "price": 179
+            },
+            {
+              "label": "6 Piece",
+              "price": 239
+            },
+            {
+              "label": "8 Piece",
+              "price": 299
+            }
+          ]
+        },
+        {
+          "name": "PEPPERONI PIZZA",
+          "desc": "Hot & crispy pepperoni slices.",
+          "img": "images/special4.jpg",
+          "variants": [
+            {
+              "label": "4 Piece",
+              "price": 199
+            },
+            {
+              "label": "6 Piece",
+              "price": 269
+            },
+            {
+              "label": "8 Piece",
+              "price": 329
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MOMOS",
+      "items": [
+        {
+          "name": "VEG STEAM MOMOS",
+          "desc": "Soft steamed dumplings.",
+          "img": "images/momos1.jpeg",
+          "variants": [
+            {
+              "label": "6 pcs",
+              "price": 99
+            },
+            {
+              "label": "10 pcs",
+              "price": 149
+            }
+          ]
+        },
+        {
+          "name": "CHICKEN STEAM MOMOS",
+          "desc": "Juicy chicken dumplings.",
+          "img": "images/momos2.jpeg",
+          "variants": [
+            {
+              "label": "6 pcs",
+              "price": 119
+            },
+            {
+              "label": "10 pcs",
+              "price": 169
+            }
+          ]
+        },
+        {
+          "name": "VEG FRIED MOMOS",
+          "desc": "Crispy fried dumplings.",
+          "img": "images/momos3.jpeg",
+          "variants": [
+            {
+              "label": "6 pcs",
+              "price": 129
+            },
+            {
+              "label": "10 pcs",
+              "price": 179
+            }
+          ]
+        },
+        {
+          "name": "CHICKEN FRIED MOMOS",
+          "desc": "Crispy chicken dumplings.",
+          "img": "images/momos4.jpeg",
+          "variants": [
+            {
+              "label": "6 pcs",
+              "price": 149
+            },
+            {
+              "label": "10 pcs",
+              "price": 199
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VEG MUNCHURIAN",
+      "items": [
+        {
+          "name": "PANEER MUNCHURIAN",
+          "price": 308,
+          "desc": "Rich, aromatic, and absolutely satisfying.",
+          "img": "images/veg_munchurian1.jpg"
+        },
+        {
+          "name": "VEG BALLS MUNCHURIAN",
+          "price": 234,
+          "desc": "Rich, aromatic, and absolutely satisfying.",
+          "img": "images/veg_munchurian2.jpg"
+        },
+        {
+          "name": "MIX VEG MUNCHURIAN",
+          "price": 262,
+          "desc": "A delicious option for all food lovers.",
+          "img": "images/veg_munchurian3.jpg"
+        }
+      ]
+    },
+    {
+      "name": "NON VEG MUNCHURIAN",
+      "items": [
+        {
+          "name": "CHICKEN MANCHURIAN",
+          "price": 168,
+          "desc": "Cooked to perfection with premium ingredients.",
+          "img": "images/non_veg_munchurian1.jpg"
+        },
+        {
+          "name": "EGG MANCHURIAN",
+          "price": 135,
+          "desc": "A delicious option for all food lovers.",
+          "img": "images/non_veg_munchurian2.jpg"
+        }
+      ]
+    },
+    {
+      "name": "FRIED RICE",
+      "items": [
+        {
+          "name": "VEG FRIED RICE",
+          "price": 290,
+          "desc": "Cooked to perfection.",
+          "img": "images/fried_rice1.jpg"
+        },
+        {
+          "name": "PANEER FRIED RICE",
+          "price": 207,
+          "desc": "A customer favorite.",
+          "img": "images/fried_rice2.jpg"
+        },
+        {
+          "name": "MIX VEG FRIED RICE",
+          "price": 280,
+          "desc": "Rich.",
+          "img": "images/fried_rice3.jpg"
+        },
+        {
+          "name": "EGG FRIED RICE",
+          "price": 274,
+          "desc": "A delicious option.",
+          "img": "images/fried_rice4.jpg"
+        },
+        {
+          "name": "CHICKEN FRIED RICE",
+          "price": 159,
+          "desc": "A delicious option.",
+          "img": "images/fried_rice5.jpg"
+        },
+        {
+          "name": "MIX CHICKEN FRIED RICE",
+          "price": 225,
+          "desc": "A delicious option.",
+          "img": "images/fried_rice6.jpg"
+        },
+        {
+          "name": "MEAT FRIED RICE",
+          "price": 152,
+          "desc": "Fresh.",
+          "img": "images/fried_rice7.jpg"
+        },
+        {
+          "name": "MIX MEAT FRIED RICE",
+          "price": 232,
+          "desc": "A customer favorite.",
+          "img": "images/fried_rice8.jpg"
+        }
+      ]
+    },
+    {
+      "name": "NOODLES",
+      "items": [
+        {
+          "name": "VEG NOODLES",
+          "price": 309,
+          "desc": "Fresh.",
+          "img": "images/noodles1.jpg"
+        },
+        {
+          "name": "PANEER NOODLES",
+          "price": 177,
+          "desc": "Delicious.",
+          "img": "images/noodles2.jpg"
+        },
+        {
+          "name": "MIX VEG NOODLES",
+          "price": 177,
+          "desc": "Authentic.",
+          "img": "images/noodles3.jpg"
+        },
+        {
+          "name": "EGG NOODLES",
+          "price": 170,
+          "desc": "Authentic.",
+          "img": "images/noodles4.jpg"
+        },
+        {
+          "name": "CHICKEN NOODLES",
+          "price": 191,
+          "desc": "Cooked to perfection.",
+          "img": "images/noodles5.jpg"
+        },
+        {
+          "name": "MIX CHICKEN NOODLES",
+          "price": 195,
+          "desc": "Authentic.",
+          "img": "images/noodles6.jpg"
+        },
+        {
+          "name": "MEAT NOODLES",
+          "price": 164,
+          "desc": "Cooked to perfection.",
+          "img": "images/noodles7.jpg"
+        },
+        {
+          "name": "MIX MEAT NOODLES",
+          "price": 228,
+          "desc": "Cooked to perfection.",
+          "img": "images/noodles8.jpg"
+        }
+      ]
+    },
+    {
+      "name": "THUKPA",
+      "items": [
+        {
+          "name": "VEG THUKPA",
+          "price": 198,
+          "desc": "Fresh.",
+          "img": "images/thukpa1.jpg"
+        },
+        {
+          "name": "PANEER THUKPA",
+          "price": 192,
+          "desc": "Fresh.",
+          "img": "images/thukpa2.jpg"
+        },
+        {
+          "name": "MIX VEG THUKPA",
+          "price": 201,
+          "desc": "Delicious.",
+          "img": "images/thukpa3.jpg"
+        },
+        {
+          "name": "EGG THUKPA",
+          "price": 266,
+          "desc": "Delicious.",
+          "img": "images/thukpa4.jpg"
+        },
+        {
+          "name": "CHICKEN THUKPA",
+          "price": 137,
+          "desc": "Fresh.",
+          "img": "images/thukpa5.jpg"
+        },
+        {
+          "name": "MIX CHICKEN THUKPA",
+          "price": 216,
+          "desc": "Fresh.",
+          "img": "images/thukpa6.jpg"
+        },
+        {
+          "name": "MEAT THUKPA",
+          "price": 148,
+          "desc": "Fresh.",
+          "img": "images/thukpa7.jpg"
+        },
+        {
+          "name": "MIX MEAT THUKPA",
+          "price": 197,
+          "desc": "Rich.",
+          "img": "images/thukpa8.jpg"
+        }
+      ]
+    },
+    {
+  "name": "BEVERAGES",
+  "items": [
+   
+    {
+      "name": "SPRITE",
+      "desc": "Chilled lemon-lime drink.",
+      "img": "images/coldrink4.jpeg",
+      "variants": [
+        { "label": "250ml", "price": 20 },
+        { "label": "500ml", "price": 35 },
+        { "label": "1L", "price": 55 }
+      ]
+    },
+    {
+      "name": "COCA COLA",
+      "desc": "Classic refreshing cola.",
+      "img": "images/coldrink2.jpg",
+      "variants": [
+        { "label": "250ml", "price": 20 },
+        { "label": "500ml", "price": 40 },
+        { "label": "1L", "price": 60 }
+      ]
+    },
+    {
+      "name": "PEPSI",
+      "desc": "Bold and crisp cola taste.",
+      "img": "images/coldrink3.jpg",
+      "variants": [
+        { "label": "250ml", "price": 20 },
+        { "label": "500ml", "price": 35 },
+        { "label": "1L", "price": 55 }
+      ]
+    },
+    {
+      "name": "MOUNTAIN DEW",
+      "desc": "Citrus flavored energizing drink.",
+      "img": "images/coldrink1.jpg",
+      "variants": [
+        { "label": "250ml", "price": 20 },
+        { "label": "500ml", "price": 35 },
+        { "label": "1L", "price": 55 }
+      ]
+    },
+
+    {
+      "name": "MINERAL WATER",
+      "desc": "Pure mineral water.",
+      "img": "images/Water.jpeg",
+      "variants": [
+        { "label": "1L", "price": 20 }
+      ]
+    },
+    {
+      "name": "SPRITE",
+      "desc": "Chilled lemon-lime drink.",
+      "img": "images/coldrink4.jpeg",
+      "variants": [
+        { "label": "250ml", "price": 20 },
+        { "label": "500ml", "price": 35 },
+        { "label": "1L", "price": 55 }
+      ]
+    },
+    {
+      "name": "COCA COLA",
+      "desc": "Classic refreshing cola.",
+      "img": "images/coldrink2.jpg",
+      "variants": [
+        { "label": "250ml", "price": 20 },
+        { "label": "500ml", "price": 40 },
+        { "label": "1L", "price": 60 }
+      ]
+    },
+    {
+      "name": "PEPSI",
+      "desc": "Bold and crisp cola taste.",
+      "img": "images/coldrink3.jpg",
+      "variants": [
+        { "label": "250ml", "price": 20 },
+        { "label": "500ml", "price": 35 },
+        { "label": "1L", "price": 55 }
+      ]
+    }
+    
+  ]
+},
+
+        {
+      "name": "COFFEE",
+      "items": [
+        {
+          "name": "BLACK COFFEE",
+          "price": 252,
+          "desc": "Favorite.",
+          "img": "images/coffee1.jpg"
+        },
+        {
+          "name": "MILK COFFEE",
+          "price": 212,
+          "desc": "Favorite.",
+          "img": "images/coffee2.jpg"
+        }
+      ]
+    },
+
+    {
+      "name": "SPECIAL",
+      "items": [
+        {
+          "name": "SPECIAL DISH 1",
+          "price": 137,
+          "desc": "Rich.",
+          "img": "images/special1.jpg"
+        },
+        {
+          "name": "SPECIAL DISH 2",
+          "price": 216,
+          "desc": "Rich.",
+          "img": "images/special2.jpg"
+        },
+        {
+          "name": "SPECIAL DISH 3",
+          "price": 132,
+          "desc": "Cooked.",
+          "img": "images/special3.jpg"
+        },
+        {
+          "name": "SPECIAL DISH 4",
+          "price": 300,
+          "desc": "Favorite.",
+          "img": "images/special4.jpg"
+        },
+        {
+          "name": "SPECIAL DISH 5",
+          "price": 196,
+          "desc": "Cooked.",
+          "img": "images/special5.jpg"
+        },
+        {
+          "name": "SPECIAL DISH 6",
+          "price": 233,
+          "desc": "Favorite.",
+          "img": "images/special6.jpg"
+        },
+        {
+          "name": "SPECIAL DISH 7",
+          "price": 286,
+          "desc": "Cooked.",
+          "img": "images/special7.jpg"
+        },
+        {
+          "name": "SPECIAL DISH 8",
+          "price": 268,
+          "desc": "Favorite.",
+          "img": "images/special8.jpg"
+        },
+        {
+          "name": "SPECIAL DISH 9",
+          "price": 290,
+          "desc": "Cooked.",
+          "img": "images/special9.jpg"
+        },
+        {
+          "name": "SPECIAL DISH 10",
+          "price": 122,
+          "desc": "Favorite.",
+          "img": "images/special10.jpg"
+        },
+        {
+          "name": "SPECIAL DISH 11",
+          "price": 167,
+          "desc": "Rich.",
+          "img": "images/special11.jpg"
+        },
+        {
+          "name": "SPECIAL DISH 12",
+          "price": 245,
+          "desc": "Cooked.",
+          "img": "images/special12.jpg"
+        },
+        {
+          "name": "SPECIAL DISH 13",
+          "price": 214,
+          "desc": "Rich.",
+          "img": "images/special13.jpg"
+        },
+        {
+          "name": "SPECIAL DISH 14",
+          "price": 261,
+          "desc": "Fresh.",
+          "img": "images/special14.jpg"
+        },
+        {
+          "name": "SPECIAL DISH 15",
+          "price": 229,
+          "desc": "Favorite.",
+          "img": "images/special15.jpg"
+        },
+        {
+          "name": "SPECIAL DISH 16",
+          "price": 272,
+          "desc": "Favorite.",
+          "img": "images/special16.jpg"
+        },
+        {
+          "name": "SPECIAL DISH 17",
+          "price": 176,
+          "desc": "Cooked.",
+          "img": "images/special17.jpg"
+        },
+        {
+          "name": "SPECIAL DISH 18",
+          "price": 172,
+          "desc": "Rich.",
+          "img": "images/special18.jpg"
+        },
+        {
+          "name": "SPECIAL DISH 19",
+          "price": 218,
+          "desc": "Cooked.",
+          "img": "images/special19.jpg"
+        },
+        {
+          "name": "SPECIAL DISH 20",
+          "price": 264,
+          "desc": "Delicious.",
+          "img": "images/special20.jpg"
+        }
+      ]
+    }
+  ]
+}

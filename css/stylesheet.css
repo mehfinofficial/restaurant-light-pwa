@@ -1518,3 +1518,24 @@ select:-webkit-autofill {
     scrollbar-color: #ff7a00 #1a1a1a;
 }
 
+/* CART SUMMARY BOX (same as checkout summary) */
+#cartSummary {
+    background: #f8f8f8;
+    padding: 16px;
+    border-radius: 14px;
+    margin-top: 20px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+}
+
+#cartSummary .rowLine {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    font-size: 15px;
+}
+
+#cartSummary .bold {
+    font-weight: 700;
+}
+
+

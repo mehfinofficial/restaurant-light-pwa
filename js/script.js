@@ -1031,6 +1031,27 @@ Landmark: ${landmarkVal || "N/A"}`
     let businessNumber = "919596184197";  
     let url = "https://wa.me/" + businessNumber + "?text=" + encodeURIComponent(message);
     window.open(url, "_blank");
+
+    
+// 🟢 CLEAR CART
+cart = [];
+saveCart();
+updateCartBubble();
+loadCartPage();
+
+// CLOSE CHECKOUT
+document.getElementById("checkoutPage").classList.remove("show");
+document.documentElement.classList.remove("html-lock");
+document.body.classList.remove("body-lock");
+
+// SHOW THANK YOU POPUP
+showThankYou();
+
+// 🟧 RELOAD PAGE + SCROLL TOP **AFTER** thank-you is shown
+setTimeout(() => {
+    window.scrollTo(0, 0);   // Scroll to top
+    location.reload();       // Reload page
+}, 5000);  // matches thank-you popup duration
 });
 
 // BESTSELLER CLICK → SCROLL TO CATEGORY
@@ -1189,5 +1210,6 @@ if ("serviceWorker" in navigator) {
     .then(() => console.log("SW Registered"))
     .catch((err) => console.log("SW error:", err));
 }
+
 
 

@@ -1182,3 +1182,24 @@ if ("serviceWorker" in navigator) {
     .then(() => console.log("SW Registered"))
     .catch((err) => console.log("SW error:", err));
 }
+
+function updateWhatsAppButton() {
+    const btn = document.getElementById("checkoutBtn");
+
+    if (navigator.onLine) {
+        btn.disabled = false;
+        btn.innerText = "Place Order on WhatsApp";
+        btn.style.opacity = "1";
+    } else {
+        btn.disabled = true;
+        btn.innerText = "Connect to Internet to Place Order";
+        btn.style.opacity = "0.5";
+    }
+}
+
+window.addEventListener("online", updateWhatsAppButton);
+window.addEventListener("offline", updateWhatsAppButton);
+
+// Run on page load
+updateWhatsAppButton();
+

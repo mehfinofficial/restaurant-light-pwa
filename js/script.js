@@ -1212,4 +1212,16 @@ if ("serviceWorker" in navigator) {
 }
 
 
+function showThankYou() {
+    const overlay = document.getElementById("errorOverlay");
+    const msg = document.getElementById("errorMessage");
+    
+    msg.innerText = "Thank you! Your order has been sent on WhatsApp.";
+    overlay.style.display = "flex";
+
+    setTimeout(() => {
+        overlay.style.display = "none";
+    }, 5000);
+}
+
 

@@ -1043,6 +1043,7 @@ loadCartPage();
 document.getElementById("checkoutPage").classList.remove("show");
 document.documentElement.classList.remove("html-lock");
 document.body.classList.remove("body-lock");
+document.getElementById("cartPage").classList.remove("show");    
 
 // SHOW THANK YOU POPUP
 showThankYou();
@@ -1223,6 +1224,7 @@ function showThankYou() {
         overlay.style.display = "none";
     }, 12000);
 }
+
 
 
 

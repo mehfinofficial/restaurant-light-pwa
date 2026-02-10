@@ -333,9 +333,14 @@ body {
 
 
 /* PREMIUM FLOATING CART BUTTON */
+/* ======================================================
+   WHITE THEME — PREMIUM STICKY CART BUTTON (FINAL)
+   WITH ORANGE BORDER + SOFT ORANGE GLOW
+   ====================================================== */
+
 .premium-cart-btn {
     position: fixed;
-    bottom: 6px;
+    bottom: 12px;
     left: 50%;
     transform: translateX(-50%) translateY(120%);
     opacity: 0;
@@ -343,40 +348,58 @@ body {
     width: 94%;
     max-width: 520px;
 
-    background: #111;
-    color: #fff ;
-    border: none;
+    /* ⭐ White translucent glass */
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+
+    /* ⭐ ORANGE BORDER */
+    border: 2px solid rgba(255, 120, 0, 0.55);
+
+    /* ⭐ Premium shadow + orange glow */
+    box-shadow:
+        0 4px 18px rgba(255, 120, 0, 0.35),      /* soft glow */
+        0 12px 26px rgba(0,0,0,0.12);           /* natural base shadow */
 
     padding: 18px 22px;
-    border-radius: 22px;
+    border-radius: 20px;
 
     font-size: 18px;
     font-weight: 700;
+    color: #111;
 
     display: flex;
     align-items: center;
-    justify-content: space-between;   /* 🔥 FIX LEFT SPACE ISSUE */
-
+    justify-content: space-between;
     gap: 14px;
 
-    box-shadow: 0 12px 28px rgba(0,0,0,0.28);
     transition: 0.35s ease;
-
     z-index: 9999;
 }
 
+/* Slide-up animation */
 .premium-cart-btn.show {
     transform: translateX(-50%) translateY(0);
     opacity: 1;
+
+    /* ⭐Glow increases when visible */
+    box-shadow:
+        0 0 14px rgba(255, 140, 0, 0.55),
+        0 6px 22px rgba(255, 120, 0, 0.28),
+        0 12px 26px rgba(0,0,0,0.12);
 }
 
+/* Press/tap feedback (mobile) */
+.premium-cart-btn:active {
+    transform: translateX(-50%) scale(0.97);
+}
 
-/* Cart icon */
+/* Cart icon box */
 .premium-cart-btn .icon {
-    font-size: 20px;
-    background: rgba(255,255,255,0.1);
-    padding: 6px 10px;
-    border-radius: 10px;
+    font-size: 19px;
+    background: rgba(0,0,0,0.06);
+    padding: 8px 12px;
+    border-radius: 12px;
+    color: #333;
 }
 
 /* Count bubble */
@@ -1535,6 +1558,7 @@ select:-webkit-autofill {
     font-weight: 700;
     color: #222;
 }
+
 
 
 

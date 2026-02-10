@@ -1,16 +1,17 @@
-const CACHE_NAME = "restaurant-pwa-v2";
+const CACHE_NAME = "restaurant-pwa-v3";
+const CACHE_EXPIRY_HOURS = 72; // 3 DAYS
 
-// Core files that must always be cached
+// Core static files
 const CORE_FILES = [
     "./",
     "./index.html",
     "./manifest.json",
-    "./menu.json",        // fresh rule applied below
+    "./menu.json",
     "./css/stylesheet.css",
     "./js/script.js"
 ];
 
-// Auto-cache these folders (dynamic)
+// Folders to auto-cache dynamically
 const FOLDER_PATTERNS = [
     "/images/",
     "/icon/",
@@ -18,17 +19,33 @@ const FOLDER_PATTERNS = [
     "/css/"
 ];
 
+// Save timestamp when cache is created
+async function saveCacheTimestamp() {
+    const timestamp = Date.now();
+    const db = await caches.open(CACHE_NAME);
+    await db.put("cache-timestamp", new Response(timestamp.toString()));
+}
+
+async function getCacheTimestamp() {
+    const db = await caches.open(CACHE_NAME);
+    const res = await db.match("cache-timestamp");
+    if (!res) return null;
+    const text = await res.text();
+    return parseInt(text);
+}
+
 // INSTALL — Cache essential files
 self.addEventListener("install", (event) => {
-    self.skipWaiting(); // Force new SW instantly
     event.waitUntil(
-        caches.open(CACHE_NAME).then((cache) => {
-            return cache.addAll(CORE_FILES);
+        caches.open(CACHE_NAME).then(async (cache) => {
+            await cache.addAll(CORE_FILES);
+            await saveCacheTimestamp();
         })
     );
+    self.skipWaiting();
 });
 
-// ACTIVATE — Clear old caches
+// ACTIVATE — Delete old caches
 self.addEventListener("activate", (event) => {
     event.waitUntil(
         caches.keys().then(keys => {
@@ -42,47 +59,56 @@ self.addEventListener("activate", (event) => {
     self.clients.claim();
 });
 
-// FETCH — All fetch handling
+// FETCH
 self.addEventListener("fetch", (event) => {
     const url = event.request.url;
 
-    // 1️⃣ SPECIAL RULE: menu.json must ALWAYS be fresh (fix wrong price/menu issue)
-    if (url.includes("menu.json")) {
-        event.respondWith(
-            fetch(event.request)
-                .then(networkRes => {
-                    // update cache
-                    caches.open(CACHE_NAME).then(cache => {
-                        cache.put(event.request, networkRes.clone());
-                    });
-                    return networkRes;
-                })
-                .catch(() => caches.match(event.request)) // fallback offline
-        );
-        return;
-    }
+    event.respondWith((async () => {
+        // Check for expired cache
+        const timestamp = await getCacheTimestamp();
+        if (timestamp) {
+            const ageHours = (Date.now() - timestamp) / (1000 * 60 * 60);
+            if (ageHours > CACHE_EXPIRY_HOURS) {
+                console.log("Cache expired — clearing...");
+                const keys = await caches.keys();
+                for (let key of keys) await caches.delete(key);
+                // Force network-only after expiry
+                return fetch(event.request);
+            }
+        }
 
-    // 2️⃣ FOLDER LEVEL CACHING (dynamic images, js, css, icons)
-    const shouldCache = FOLDER_PATTERNS.some(folder => url.includes(folder));
-    if (shouldCache) {
-        event.respondWith(
-            caches.match(event.request).then(cachedRes => {
-                return (
-                    cachedRes ||
-                    fetch(event.request).then(networkRes => {
-                        caches.open(CACHE_NAME).then(cache => {
-                            cache.put(event.request, networkRes.clone());
-                        });
-                        return networkRes;
-                    })
-                );
-            })
-        );
-        return;
-    }
+        // Special fresh rule for menu.json
+        if (url.includes("menu.json")) {
+            try {
+                const net = await fetch(event.request);
+                const cache = await caches.open(CACHE_NAME);
+                cache.put(event.request, net.clone());
+                return net;
+            } catch {
+                return caches.match(event.request);
+            }
+        }
 
-    // 3️⃣ DEFAULT STRATEGY — Network-first, fallback to cache
-    event.respondWith(
-        fetch(event.request).catch(() => caches.match(event.request))
-    );
+        // Folder-level dynamic caching (images/js/css/icon)
+        if (FOLDER_PATTERNS.some(folder => url.includes(folder))) {
+            const cached = await caches.match(event.request);
+            if (cached) return cached;
+
+            try {
+                const net = await fetch(event.request);
+                const cache = await caches.open(CACHE_NAME);
+                cache.put(event.request, net.clone());
+                return net;
+            } catch {
+                return cached || fetch(event.request);
+            }
+        }
+
+        // Default network-first fallback
+        try {
+            return await fetch(event.request);
+        } catch {
+            return caches.match(event.request);
+        }
+    })());
 });

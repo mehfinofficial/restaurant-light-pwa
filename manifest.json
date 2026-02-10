@@ -1,6 +1,6 @@
 {
   "name": "Tibetan Taste",
-  "short_name": "Taste",
+  "short_name": "TibetanTaste",
   "description": "Restaurant ordering app with spicy and delicious vibe.",
   "start_url": "./index.html",
   "display": "standalone",
@@ -27,3 +27,4 @@
     }
   ]
 }
+

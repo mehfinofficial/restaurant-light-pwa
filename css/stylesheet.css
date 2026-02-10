@@ -1488,3 +1488,33 @@ select:-webkit-autofill {
     stroke:black;
     fill: none;
 }
+/* ============================
+   PREMIUM ORANGE SCROLLBAR
+============================ */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a; /* dark track */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ff7a00; /* your orange */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255,122,0,0.5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ff8f2b; /* lighter hover */
+    box-shadow: 0 0 14px rgba(255,122,0,0.75);
+}
+
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #ff7a00 #1a1a1a;
+}
+

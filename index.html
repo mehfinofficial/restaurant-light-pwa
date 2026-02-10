@@ -475,6 +475,10 @@
 <footer id="mainFooter">
     <div class="footer-inner">
 
+        <button id="installAppBtnFooter" onclick="showInstallGuide()">
+    📲 Install App
+</button>
+
         <!-- BRAND -->
         <div class="footer-col">
             <h3 id="footerRestaurantName">Tibetan Taste</h3>
@@ -570,6 +574,44 @@
 </div>
 
 
+    
+<!-- INSTALL GUIDE OVERLAY -->
+<div id="installGuideOverlay" style="display:none;">
+    <div id="installGuideBox">
+        
+        <!-- App Icon -->
+        <img src="icon/icon-512.png" id="installGuideIcon">
+
+        <h2 id="installGuideTitle">Install Our Tibetan Taste App</h2>
+        <p id="installGuideText">Follow these steps:</p>
+
+        <!-- Android -->
+        <div class="install-step" id="androidSteps">
+            <p>1. Tap <b>⋮ (three dots)</b> in the top-right.</p>
+            <p>2. Tap <b>Add to Home Screen</b>.</p>
+            <p>3. Tap <b>Install</b>.</p>
+        </div>
+
+        <!-- iOS -->
+        <div class="install-step" id="iosSteps">
+            <p>1. Tap the <b>Share</b> button (⬆️).</p>
+            <p>2. Tap <b>Add to Home Screen</b>.</p>
+            <p>3. Tap <b>Add</b>.</p>
+        </div>
+
+        <!-- Desktop -->
+        <div class="install-step" id="desktopSteps">
+            <p>1. Look at the <b>address bar</b>.</p>
+            <p>2. Click the <b>Install icon</b>.</p>
+            <p>3. Choose <b>Install</b>.</p>
+        </div>
+
+        <p id="tapToClose">Tap anywhere to close</p>
+
+    </div>
+</div>
+
+
 <script src="js/script.js"></script>
 
 
@@ -578,4 +620,5 @@
 
 </footer>
 </html>
+
 

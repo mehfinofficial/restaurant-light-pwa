@@ -1226,6 +1226,60 @@ function showThankYou() {
 }
 
 
+// =======================
+// INSTALL GUIDE LOGIC
+// =======================
+let installPopupShownThisVisit = false;
+
+function isAppInstalled() {
+    return window.matchMedia("(display-mode: standalone)").matches;
+}
+
+function showInstallGuide(auto = false) {
+
+    // DO NOT show if PWA installed
+    if (isAppInstalled()) {
+        console.log("PWA Installed → Hide both overlay & footer button.");
+        document.getElementById("installAppBtnFooter").style.display = "none";
+        return;
+    }
+
+    // Prevent auto popup more than once per visit
+    if (auto && installPopupShownThisVisit) return;
+
+    installPopupShownThisVisit = true;
+
+    const ua = navigator.userAgent;
+
+    document.getElementById("androidSteps").style.display = /Android/i.test(ua) ? "block" : "none";
+    document.getElementById("iosSteps").style.display = /iPhone|iPad|iPod/i.test(ua) ? "block" : "none";
+    document.getElementById("desktopSteps").style.display =
+        (!/Android|iPhone|iPad|iPod/i.test(ua)) ? "block" : "none";
+
+    document.getElementById("installGuideOverlay").style.display = "flex";
+}
+
+// Close on tap anywhere
+document.getElementById("installGuideOverlay").addEventListener("click", () => {
+    document.getElementById("installGuideOverlay").style.display = "none";
+});
+
+// Auto open after 15 sec ONCE per visit
+window.addEventListener("load", () => {
+
+    // Hide button if already installed
+    if (isAppInstalled()) {
+        document.getElementById("installAppBtnFooter").style.display = "none";
+        return;
+    }
+
+    setTimeout(() => {
+        showInstallGuide(true);
+    }, 15000);
+});
+
+
+
 
 
 

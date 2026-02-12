@@ -475,8 +475,10 @@
 <footer id="mainFooter">
     <div class="footer-inner">
 
-        <button id="installAppBtnFooter" onclick="showInstallGuide()">
-    📲 Install App
+        <button id="installAppBtnFooter"
+        class="install-btn"
+        onclick="triggerInstall()">
+   📲 Install Our App
 </button>
 
         <!-- BRAND -->
@@ -585,25 +587,26 @@
         <h2 id="installGuideTitle">Install Our Tibetan Taste App</h2>
         <p id="installGuideText">Follow these steps:</p>
 
-        <!-- Android -->
-        <div class="install-step" id="androidSteps">
-            <p>1. Tap <b>⋮ (three dots)</b> in the top-right.</p>
-            <p>2. Tap <b>Add to Home Screen</b>.</p>
-            <p>3. Tap <b>Install</b>.</p>
-        </div>
+          <!-- Android -->
+<div class="install-step" id="androidSteps">
+    <p>1. Open instantly from your <b>home screen</b>.</p>
+    <p>2. Order food in just a <b>few quick taps</b>.</p>
+    <p>3. Works smoothly even with a <b>slow connection</b>.</p>
+</div>
+
+<!-- Desktop -->
+<div class="install-step" id="desktopSteps">
+    <p>1. Open anytime with <b>one click</b>.</p>
+    <p>2. Place your order <b>faster and easier</b>.</p>
+    <p>3. Save time with <b>quick access</b> every day.</p>
+</div>
+
 
         <!-- iOS -->
         <div class="install-step" id="iosSteps">
             <p>1. Tap the <b>Share</b> button (⬆️).</p>
             <p>2. Tap <b>Add to Home Screen</b>.</p>
             <p>3. Tap <b>Add</b>.</p>
-        </div>
-
-        <!-- Desktop -->
-        <div class="install-step" id="desktopSteps">
-            <p>1. Look at the <b>address bar</b>.</p>
-            <p>2. Click the <b>Install icon</b>.</p>
-            <p>3. Choose <b>Install</b>.</p>
         </div>
 
         <p id="tapToClose">Tap anywhere to close</p>
@@ -620,5 +623,6 @@
 
 </footer>
 </html>
+
 
 

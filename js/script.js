@@ -1278,6 +1278,58 @@ window.addEventListener("load", () => {
     }, 15000);
 });
 
+/* ==========================
+   PWA INSTALL SYSTEM
+========================== */
+
+let deferredPrompt = null;
+
+// Capture install event
+window.addEventListener("beforeinstallprompt", (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    console.log("PWA install available");
+});
+
+// Universal trigger function
+async function triggerInstall() {
+
+    // Android / Desktop Chrome
+    if (deferredPrompt) {
+        deferredPrompt.prompt();
+
+        const { outcome } = await deferredPrompt.userChoice;
+
+        if (outcome === "accepted") {
+            localStorage.setItem("pwaInstalled", "yes");
+        }
+
+        deferredPrompt = null;
+    } 
+    else {
+        // iOS fallback → show your overlay
+        showInstallGuide(false);
+    }
+}
+
+// Detect successful install
+window.addEventListener("appinstalled", () => {
+    localStorage.setItem("pwaInstalled", "yes");
+    deferredPrompt = null;
+});
+
+
+
+// Auto hide if already installed
+if (
+    window.matchMedia("(display-mode: standalone)").matches ||
+    localStorage.getItem("pwaInstalled") === "yes"
+) {
+    document.querySelectorAll(".install-btn").forEach(btn => {
+        btn.style.display = "none";
+    });
+}
+
 
 
 

@@ -1631,7 +1631,7 @@ select:-webkit-autofill {
     background: #ffffff;        /* WHITE CARD */
     color: #111111;             /* DARK TEXT */
 
-    padding: 28px 24px;
+   padding: 24px 24px 10px 24px; 
     border-radius: 22px;
 
     text-align: left;
@@ -1737,6 +1737,7 @@ select:-webkit-autofill {
     transform: scale(0.96);
     box-shadow: 0 4px 16px rgba(255, 128, 25, 0.55);
 }
+
 
 
 

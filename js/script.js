@@ -1320,16 +1320,22 @@ window.addEventListener("appinstalled", () => {
 
 
 
-// Auto hide if already installed
+// If already installed
 if (
     window.matchMedia("(display-mode: standalone)").matches ||
     localStorage.getItem("pwaInstalled") === "yes"
 ) {
-    document.querySelectorAll(".install-btn").forEach(btn => {
-        btn.style.display = "none";
-    });
-}
 
+    // Change overlay button text
+    document.querySelectorAll(".install-btn").forEach(btn => {
+        btn.innerText = "App Already Installed";
+        btn.style.pointerEvents = "none";   // disable click
+        btn.style.opacity = "0.7";          // slightly faded
+    });
+
+    // Hide footer button (optional – keep your original behavior)
+    document.getElementById("installAppBtnFooter").style.display = "none";
+}
 
 
 

@@ -1330,6 +1330,15 @@ window.addEventListener("appinstalled", () => {
     //});
 //}
 
+window.addEventListener("load", () => {
+    setTimeout(() => {
+        document.getElementById("splash").style.opacity = "0";
+        document.getElementById("splash").style.transition = "0.6s ease";
+        setTimeout(() => {
+            document.getElementById("splash").remove();
+        }, 600);
+    }, 2200);
+});
 
 
 

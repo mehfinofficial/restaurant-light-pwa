@@ -215,6 +215,7 @@ body {
     border-bottom-right-radius: 30px;
     overflow: hidden;
     animation: heroZoom 10s ease-in-out alternate;
+   margin-top: 60px; /* match your header height */
 }
 @keyframes heroZoom {
     0% { background-size: 100%; }

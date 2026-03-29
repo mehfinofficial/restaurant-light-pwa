@@ -1345,7 +1345,16 @@ window.addEventListener("appinstalled", () => {
 
 
 
-
+function scrollToItem(itemName) {
+    const cards = document.querySelectorAll(".food-card");
+    for (let card of cards) {
+        const h6 = card.querySelector("h6");
+        if (h6 && h6.innerText.trim().toLowerCase() === itemName.toLowerCase()) {
+            card.scrollIntoView({ behavior: "smooth", block: "center" });
+            return;
+        }
+    }
+}
 
 
 

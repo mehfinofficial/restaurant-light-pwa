@@ -1,4 +1,4 @@
-const CACHE_NAME = "restaurant-pwa-v3";
+const CACHE_NAME = "restaurant-pwa-v4";
 const CACHE_EXPIRY_HOURS = 72; // 3 DAYS
 
 // Core static files

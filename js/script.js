@@ -1063,8 +1063,8 @@ showThankYou();
 
 // 🟧 RELOAD PAGE + SCROLL TOP **AFTER** thank-you is shown
 setTimeout(() => {
-    window.scrollTo(0, 0);   // Scroll to top
-    location.reload();       // Reload page
+     window.scrollTo({ top: 0, behavior: "smooth" });
+    setTimeout(() => location.reload(), 600);   // wait for scroll, then reload
 }, 12000);  // matches thank-you popup duration
 });
 
